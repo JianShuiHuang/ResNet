@@ -37,7 +37,7 @@ def main():
     train_dataloader = torch.utils.data.DataLoader(dataset=train_data, batch_size=BatchSize, shuffle=False)
     test_dataloader = torch.utils.data.DataLoader(dataset=test_data, batch_size=BatchSize, shuffle=False)  
     
-   
+    
     ##pretrain resnet18    
     train_accuracy = []
     test_accuracy = []
@@ -63,7 +63,7 @@ def main():
 
     print('Max accuracy: ', max(test_accuracy))
     print("resnet18 complet...")
-
+    
     """
     ##pretrain resnet50
     train_accuracy0 = []
