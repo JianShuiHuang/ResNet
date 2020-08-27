@@ -78,7 +78,7 @@ def main():
     for i in range(Epochs50):
         train0 = Train(train_dataloader, model0, optimizer0)
         train_accuracy0.append(train0)
-        test0 = Test(test_dataloader, model0, optimizer0, Epochs50, i)
+        test0 = Test(test_dataloader, model0, Epochs50)
         test_accuracy0.append(test0)
         print("epochs:", i )
         print('Train Accuracy: ', train0)
