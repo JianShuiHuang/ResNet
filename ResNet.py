@@ -6,7 +6,7 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 def Pretrained_model18():
     resnet18 = models.resnet18(pretrained = False)
-    resnet18.fc = nn.Linear(in_features=64, out_features=2, bias=True)
+    resnet18.fc = nn.Linear(in_features=512, out_features=5, bias=True)
     
     return resnet18
 
