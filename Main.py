@@ -23,7 +23,7 @@ from TrainTest import *
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 ##Hyper parameters
-lr = 1e-03
+lr = 1e-02
 BatchSize = 4
 Epochs18 = 10
 Epochs50 = 5
