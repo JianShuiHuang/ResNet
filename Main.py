@@ -75,6 +75,8 @@ def main():
     model0 = model0.to(device)
     optimizer0 = optim.SGD(model0.parameters(), lr = lr, momentum = Momentum, weight_decay = Weight_decay)
     
+    start = time.time()
+    
     for i in range(Epochs50):
         train0 = Train(train_dataloader, model0, optimizer0)
         train_accuracy0.append(train0)
@@ -83,6 +85,9 @@ def main():
         print("epochs:", i )
         print('Train Accuracy: ', train0)
         print('Test Accuracy: ', test0)
+        
+    print("Time: ", timeSince(start, 1 / 100))
+    
     print('Max accuracy: ', max(test_accuracy0))
     print("resnet50 complet...")
     
