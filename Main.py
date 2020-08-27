@@ -18,6 +18,7 @@ from torchvision import transforms
 from ResNet import *
 from DataLoader import *
 from Time import *
+import time
 from TrainTest import *
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -47,6 +48,8 @@ def main():
     model = model.to(device)
     optimizer = optim.SGD(model.parameters(), lr = lr, momentum = Momentum, weight_decay = Weight_decay)
     
+    start = time.time()
+
     for i in range(Epochs18):
         train = Train(train_dataloader, model, optimizer)
         train_accuracy.append(train)
@@ -55,6 +58,9 @@ def main():
         print("epochs:", i )
         print('Train Accuracy: ', train)
         print('Test Accuracy: ', test)
+
+    print("Time: ", timeSince(start, 1 / 100))
+
     print('Max accuracy: ', max(test_accuracy))
     print("resnet18 complet...")
 
@@ -80,5 +86,5 @@ def main():
     print('Max accuracy: ', max(test_accuracy0))
     print("resnet50 complet...")
     """
-    
+
 main()    
