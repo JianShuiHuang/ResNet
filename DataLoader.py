@@ -58,7 +58,7 @@ class DataLoader(data.Dataset):
         ##step1
         path = self.root + self.img_name[index] + '.jpeg'
         img = Image.open(path)
-        img = img.resize((64, 64),Image.ANTIALIAS
+        img = img.resize((64, 64),Image.ANTIALIAS)
         
         ##step2
         GroundTruth = 1 if self.label[index] >= 1 else 0
