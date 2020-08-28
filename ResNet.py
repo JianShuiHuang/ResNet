@@ -11,7 +11,7 @@ def Pretrained_model18():
     return resnet18
 
 def Pretrained_model50():
-    resnet50 = models.resnet50(pretrained = T)
+    resnet50 = models.resnet50(pretrained = True)
     resnet50.fc = nn.Linear(in_features=2048, out_features=2, bias=True)
     
     return resnet50
